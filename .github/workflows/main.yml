@@ -22,7 +22,19 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
-
+    
+    - name: add env variables
+      uses: myci-actions/export-env-var@1
+      with:
+          name: TF_VAR_appId
+          value: ${{ secrets.AZURE_AD_CLIENT_ID }}
+          
+    - name: add env variables2
+      uses: myci-actions/export-env-var@1
+      with:
+          name: TF_VAR_password
+          value: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+          
     - name: Terraform Init
       id: init
       env:
