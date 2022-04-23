@@ -1,2 +1,1 @@
-appId    = "id"
-password = "password"
+
