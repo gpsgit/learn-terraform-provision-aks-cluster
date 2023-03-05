@@ -52,7 +52,7 @@ jobs:
        RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
        STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
        CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
-      run: terraform init -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME" -backend-config="resource_group_name=$RESOURCE_GROUP"
+      run: terraform init -upgrade -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME" -backend-config="resource_group_name=$RESOURCE_GROUP"
     
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
